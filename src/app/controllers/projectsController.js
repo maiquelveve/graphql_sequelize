@@ -1,24 +1,18 @@
+const Project = require('../models/Project');
+
 class ProjectsController {
     async listAllProjects() {
         try {
-            const name = "teste"
-            const price = "12.23"
-            const user = {
-                id: "1",
-                email: "maiquelveve@gmail.com",
-                name: "maiquel",
-            }
-
-            return [{ name, price, user }]
+            return await Project.findAll({ include: { association: 'user' } })
 
         } catch (error) {
             return error
         }
     }
 
-    async createProject(data) {
+    async createProject(data, user_id) {
         try {
-            return data
+            return await Project.create({...data, user_id})
 
         } catch (error) {
             return error

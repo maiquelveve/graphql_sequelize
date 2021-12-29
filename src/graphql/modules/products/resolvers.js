@@ -8,8 +8,8 @@ module.exports = {
 
     Mutation: {
         async createProject(_, { data }, { dataSources, authUser }) {
-            await authUser()
-            return await dataSources.projectsController.createProject(data) 
+            const user_id = await authUser()
+            return await dataSources.projectsController.createProject(data, user_id) 
         },  
     }
 }

@@ -1,8 +1,9 @@
 const { Sequelize } = require('sequelize');
 const dataBaseConfig = require('../config/database');
 const User = require('../app/models/User');
+const Project = require('../app/models/Project')
 
-const models = [User];
+const models = [User, Project];
 
 class Database {
     constructor() {
@@ -17,22 +18,3 @@ class Database {
 }
 
 module.exports = new Database();
-
-
-
-
-/* 
-yarn add sequelize-cli -D
-
-    yarn sequelize db:create
-
-    yarn sequelize db:migrate (EXECUTAR AS MIGRATIONS)
-
-
-
-
-
-    -------------------------------
-    yarn sequelize migration:create --name=users
-
-*/
