@@ -12,8 +12,13 @@ input UserInput {
     password: String
 }
 
+input UserLoginInput {
+    email: String!
+    password: String!
+}
+
 type Query {
-    login(email: String, password: String): User
+    login(data: UserLoginInput!): User
     users: [User]
 } 
 

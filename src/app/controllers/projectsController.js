@@ -1,4 +1,6 @@
 const Project = require('../models/Project');
+const { createProjectValidations } = require('../../validations/projectsValidations');
+const { serializeString, serializePrice } = require('../../helpers/serializeHelpers');
 
 class ProjectsController {
     async listAllProjects() {
@@ -12,12 +14,22 @@ class ProjectsController {
 
     async createProject(data, user_id) {
         try {
-            return await Project.create({...data, user_id})
+            const project = serializeProjects(data)
+            await createProjectValidations(project)
+
+            return await Project.create({...project, user_id})
 
         } catch (error) {
             return error
         }
     }
 }    
+
+function serializeProjects(project) {
+    return {
+        name: serializeString(project.name),
+        price: serializePrice(project.price),
+    }
+}
 
 module.exports = new ProjectsController()
