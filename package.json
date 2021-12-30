@@ -4,6 +4,7 @@
     "apollo-datasource-rest": "^3.4.0",
     "apollo-server": "^3.5.0",
     "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "graphql": "^16.2.0",
     "graphql-tools": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
