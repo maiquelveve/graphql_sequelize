@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const ErrorsLogin = require('../errors/ErrorsLogin');
+const { Op } = require('sequelize')
 const { createUserValidations } = require('../../validations/usersValidations');
 const { decryptPassword, encryptPassword } = require('../../helpers/passwordHelper');
 const { generatorToken } = require('../../helpers/tokenHelper');
@@ -29,9 +30,19 @@ class UserController {
         }
     }
 
-    async listAllUser() {
+    async listAllUser(id, name) {
         try {
-            return await User.findAll()
+            let filter = {};
+
+            if(id) {
+                filter = {...filter, id}
+            } 
+
+            if(name) {
+                filter = {...filter, name: { [Op.substring]: name }}
+            }
+
+            return await User.findAll({ where: filter })
 
         } catch (error) {
             return error

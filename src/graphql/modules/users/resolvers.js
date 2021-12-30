@@ -4,9 +4,9 @@ module.exports = {
             return await dataSources.usersController.login(data) 
         }, 
         
-        async users(_, __, { dataSources, authUser }) {
+        async users(_, {id, name}, { dataSources, authUser }) {
             await authUser()
-            return await dataSources.usersController.listAllUser() 
+            return await dataSources.usersController.listAllUser(id, name) 
         },
         
     },

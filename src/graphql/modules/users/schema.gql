@@ -19,7 +19,7 @@ input UserLoginInput {
 
 type Query {
     login(data: UserLoginInput!): User
-    users: [User]
+    users(id: ID, name: String): [User]
 } 
 
 type Mutation {

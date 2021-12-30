@@ -1,8 +1,8 @@
 module.exports = {
     Query: {
-        async projects(_, __, { dataSources, authUser }) {
+        async projects(_, { id, name }, { dataSources, authUser }) {
             await authUser()
-            return await dataSources.projectsController.listAllProjects() 
+            return await dataSources.projectsController.listAllProjects(id, name) 
         },  
     },
 

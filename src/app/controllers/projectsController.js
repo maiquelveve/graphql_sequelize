@@ -1,11 +1,22 @@
 const Project = require('../models/Project');
+const { Op } = require('sequelize');
 const { createProjectValidations } = require('../../validations/projectsValidations');
 const { serializeString, serializePrice } = require('../../helpers/serializeHelpers');
 
 class ProjectsController {
-    async listAllProjects() {
+    async listAllProjects(id, name) {
         try {
-            return await Project.findAll({ include: { association: 'user' } })
+            let filter = {};
+
+            if(id) {
+                filter = {...filter, id}
+            } 
+
+            if(name) {
+                filter = {...filter, name: { [Op.substring]: name }}
+            }
+
+            return await Project.findAll({ where: filter, include: { association: 'user' } })
 
         } catch (error) {
             return error

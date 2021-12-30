@@ -17,7 +17,7 @@ input ProjectInput {
 }
 
 type Query {
-    projects: [Project]
+    projects(id: ID, name: String): [Project]
 } 
 
 type Mutation {
