@@ -55,6 +55,7 @@ Para executar e utilizar a API, agora basta acessar a pasta da API/projeto pelo 
     
 -> npm run dev
 
+Agora acesse http://localhost:4000/ no navegador e utilize a API com graphql.
 Antes de executar a API lembre-se de realizar todos os passos de configuração descritos anteriormente.
 
 
