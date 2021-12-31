@@ -74,8 +74,3 @@ Para a criaçao dessa API com GRAPHQL e MYSQL foi utilizada algumas dependência
 -> jsonwebtoken => Para criação e gerenciamento do token dos usuario logados
 
 -> sequelize => ORM para realizar as operações com a base de dados. 
-
-
-# Melhorias Possíveis, O que eu faria se tivesse mais tempo?
-
-Sempre é possível melhorar, mas com maior tempo eu adicionaria um controle maior e mais validações dos campos, utilizaria o typescript, pois não tive o tempo de criar a API com o typescript por não ter tido ainda a oportunidade de trabalhar com o mesmo, então optei por não usa-lo para ser mais rapido devido ao prazo de entrega.
