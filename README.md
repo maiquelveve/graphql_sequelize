@@ -1,6 +1,7 @@
 # graphql_sequelize
 
-Esta é uma API feita com graphql.
+Esta é uma API feita com graphql. 
+Lembre-se de estar com uma versão atual do NODE.JS, nesse momento é "16.13.1", pois algumas dependências podem não ser compatíveis com as versões mais antigas.
 
 # Instalar as dependências
 
@@ -9,28 +10,38 @@ No terminal de comando acesse a pasta do projeto e execute o seguinte comando pa
       -> yarn 
          ou
       -> npm i
-      
-# Criando o BANCO DE DADOS
-
-Para criar o banco de dados e depois criar as tabelas por meio das MIGRATIONS, acesse pelo terminal de comnado a pasta do projeto/API e excute os seguintes comandos:
-
--> yarn sequelize db:create (Comando que cria o banco de dados)
--> yarn sequelize db:migrate (Comando que executará as migrations e criará as tabelas no banco)
-
-Antes de executar esses comando execute os serviços do banco de dados Mysql. E execute após as instalações das dependências.
 
 # Configurando o arquivo .ENV
 
 Como trata-se de um arquivo que contêm as variaveis de ambiente, normalmente não são enviados os dados delas, pois eles devem ser configurado na maquina local que executará a API, então basta criar o arquivo .env conforme o arquivo .env.example e "setar" os valores das variaveis ali descritas.
 EX:
 
+
 ARQUIVO .env
 
   SECRET_TOKEN=asdf123asdf987
+  
   EXPIRESIN=2d
+  
   DATABASE_USERNAME=root
+  
   DATABASE_PASSWORD=123456
+  
   DATABASE_HOST=localhost
+
+
+
+# Criando o BANCO DE DADOS
+
+
+Para criar o banco de dados e depois criar as tabelas por meio das MIGRATIONS, acesse pelo terminal de comnado a pasta do projeto/API e excute os seguintes comandos:
+
+-> yarn sequelize db:create (Comando que cria o banco de dados)
+
+-> yarn sequelize db:migrate (Comando que executará as migrations e criará as tabelas no banco)
+
+Antes de executar esses comando execute os serviços do banco de dados Mysql. E execute após as instalações das dependências.
+
 
 
 # Executando a API
