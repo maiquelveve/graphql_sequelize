@@ -20,6 +20,7 @@
     "dev": "nodemon index.js -e js,gql"
   },
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "sequelize-cli": "^6.3.0"
   }
 }
