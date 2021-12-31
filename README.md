@@ -54,9 +54,13 @@ Antes de executar a API lembre-se de realizar todos os passos de configuração 
 Para a criaçao dessa API com GRAPHQL e MYSQL foi utilizada algumas dependências como:
 
 -> apollo-server => Para ser possível utilizar o GRAPHQL, além de outras dependência que auxiliam na execução como "graphql-tools", "@graphql-tools/load-files"
+
 -> bcrypt => Uma biblioteca que é utilizada para criptografar as senhas do usuário e descriptografa-las quando o mesmo realiza o login
+
 -> dotenv => Para a crição de variaveis de ambiente.
+
 -> jsonwebtoken => Para criação e gerenciamento do token dos usuario logados
+
 -> sequelize => ORM para realizar as operações com a base de dados. 
 
 
