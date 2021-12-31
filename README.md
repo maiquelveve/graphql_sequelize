@@ -53,7 +53,7 @@ Para executar e utilizar a API, agora basta acessar a pasta da API/projeto pelo 
     ou
     
     
--> npm dev
+-> npm run dev
 
 Antes de executar a API lembre-se de realizar todos os passos de configuração descritos anteriormente.
 
